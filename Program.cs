@@ -12,7 +12,7 @@ app.MapGet("/AddHeader", (HttpResponse response) => {
      });
 
 app.MapPost("/saveproduct", (Product product) => {
-    return product.Code + " - " + product.Name;
+    ProductRepository.Add(product);
 });
 
 //api.app.com/users?datastart={date}&dataend={date}
@@ -20,9 +20,9 @@ app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string date
     return dateStart + " - " + dateEnd;
 });
 
-//api.app.com/user/{code}
 app.MapGet("/getproduct/{code}", ([FromRoute] string code) => {
-    return code;
+    var product = ProductRepository.GetBy(code);
+    return product;
 });
 
 app.MapGet("/getproductbyheader", (HttpRequest request) => {
@@ -34,20 +34,23 @@ app.Run();
 public static class ProductRepository {
     public static List<Product> Products { get; set; }
 
+    static ProductRepository() {
+        Products = new List<Product>();
+    }
+
     public static void Add(Product product){
         if(Products == null)
             Products = new List<Product>();
 
-        Products.Add(Product);
-}
+        Products.Add(product);
+    }
 
-public static Product GetBy (string code) {
-    return Product.First(p => p.Code == code);
+    public static Product GetBy(string code) {
+        return Products.FirstOrDefault(p => p.Code == code);
     }
 }
 
 public class Product {
-    public int Code { get; set; }
-    public String Name { get; set; }
-
+    public string Code { get; set; }
+    public string Name { get; set; }
 }
