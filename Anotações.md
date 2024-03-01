@@ -45,4 +45,14 @@ dotnet watch run
 
  - Em desenvolvimento de software, um "endpoint" geralmente se refere a um ponto de extremidade em uma API (Interface de Programação de Aplicações). Em C# usando .NET, você pode criar endpoints usando o framework ASP.NET Core, que é uma estrutura moderna para construir aplicativos web e APIs.
 
- ### Seção 5: CRUD básico
+ ### 27. Status code
+
+Os códigos de status de resposta HTTP indicam se uma solicitação HTTP específica foi concluída com êxito. As respostas são agrupadas em cinco classes:
+
+ * Respostas Informativas (100 – 199)
+ * Respostas bem-sucedidas (200 – 299)
+ * Mensagens de redirecionamento (300 – 399)
+ * Respostas de erro do cliente (400 – 499)
+ * Respostas de erro do servidor (500 – 599)
+ 
+<https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status>
