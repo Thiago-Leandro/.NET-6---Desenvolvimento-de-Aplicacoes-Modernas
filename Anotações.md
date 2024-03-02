@@ -56,3 +56,63 @@ Os códigos de status de resposta HTTP indicam se uma solicitação HTTP especí
  * Respostas de erro do servidor (500 – 599)
  
 <https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status>
+
+
+### 31. Environments
+Ambientes (Environments) em .NET, especialmente no contexto do ASP.NET Core, são utilizados para definir diferentes configurações e comportamentos com base no ambiente em que a aplicação está sendo executada. O ambiente pode ser, por exemplo, "Development", "Staging" ou "Production". Cada ambiente pode ter diferentes configurações de banco de dados, serviços, níveis de log, etc.
+
+Aqui estão algumas informações sobre como configurar e usar ambientes no contexto do ASP.NET Core:
+
+ * 1. Definindo o Ambiente:
+    * O ambiente é frequentemente definido através da variável de ambiente **ASPNETCORE_ENVIRONMENT**. Você pode definir essa variável no sistema operacional ou utilizar configurações específicas do seu ambiente de hospedagem.
+ * 2. Configuração do Ambiente no Startup.cs:
+    * No arquivo **Startup.cs**, você pode configurar serviços e middleware com base no ambiente da seguinte forma:
+
+~~~
+public void ConfigureServices(IServiceCollection services)
+{
+    if (env.IsDevelopment())
+    {
+        // Configurações específicas para o ambiente de desenvolvimento
+    }
+    else if (env.IsStaging())
+    {
+        // Configurações específicas para o ambiente de staging
+    }
+    else if (env.IsProduction())
+    {
+        // Configurações específicas para o ambiente de produção
+    }
+}
+~~~
+
+ * 3. Configuração no appsettings.json:
+    * Você pode ter arquivos de configuração específicos para cada ambiente. Por exemplo, appsettings.**Development.json**, **appsettings.Staging.json** e **appsettings.Production.json**. As configurações específicas do ambiente substituirão as configurações no arquivo principal **appsettings.json**.
+
+ * 4. Configuração de Logging:
+    * Você pode configurar o sistema de log com base no ambiente. Por exemplo:
+~~~
+if (env.IsDevelopment())
+{
+    // Configuração de log específica para o ambiente de desenvolvimento
+}
+~~~
+
+ * 5. Utilizando Environments em Aplicações Console:
+    * Em aplicações console .NET, você pode obter o ambiente da seguinte forma:
+~~~
+var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+~~~
+
+Ou, se estiver usando **WebHost.CreateDefaultBuilder:**
+
+~~~
+var builder = new HostBuilder()
+    .UseEnvironment("Development") // substitua "Development" pelo ambiente desejado
+    .ConfigureWebHostDefaults(webBuilder =>
+    {
+        webBuilder.UseStartup<Startup>();
+    });
+~~~
+
+ - Lembrando que o uso e configuração específicos podem variar dependendo da versão do ASP.NET Core que você está utilizando e da estrutura geral da sua aplicação. Certifique-se de verificar a documentação oficial e as melhores práticas para a versão específica que você está utilizando.
