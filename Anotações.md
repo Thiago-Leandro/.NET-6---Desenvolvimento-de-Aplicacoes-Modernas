@@ -126,3 +126,21 @@ var builder = new HostBuilder()
  ~~~
  wsl --install
  ~~~
+
+  ### 34. Instalando docker
+
+  https://www.docker.com/
+
+### 35. Instalando SQL Server via container
+
+No Powershell execute o comando:
+
+~~~
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+~~~
+
+Para executar a imagem de contêiner do Linux com o Docker, você pode usar o comando a seguir em um shell de bash ou no prompt de comando com privilégios elevados do PowerShell
+
+~~~
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Sql2019" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
+~~~
