@@ -116,3 +116,13 @@ var builder = new HostBuilder()
 ~~~
 
  - Lembrando que o uso e configuração específicos podem variar dependendo da versão do ASP.NET Core que você está utilizando e da estrutura geral da sua aplicação. Certifique-se de verificar a documentação oficial e as melhores práticas para a versão específica que você está utilizando.
+
+ ### 33. Instalando WSL
+
+  * <https://learn.microsoft.com/en-us/windows/wsl/install>
+
+ Abrir o Powershell como adm 
+
+ ~~~
+ wsl --install
+ ~~~
