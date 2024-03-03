@@ -8,7 +8,7 @@
 
  Os pacotes NuGet são unidades de distribuição de software que podem conter bibliotecas compiladas, arquivos de recursos, metadados e scripts de instalação. 
 
-### Seção 3: O conceito de uma aplicação WEB
+## Seção 3: O conceito de uma aplicação WEB
 
 #### Web Server:
 
@@ -28,7 +28,7 @@
 
 Esses conceitos são fundamentais para entender como as aplicações web .NET funcionam, desde a comunicação via HTTP até a hospedagem em servidores web.
 
-### Seção 4: Primeira API
+## Seção 4: Primeira API
 
 #### 13. Instalando Postman
 
@@ -143,4 +143,17 @@ Para executar a imagem de contêiner do Linux com o Docker, você pode usar o co
 
 ~~~
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Sql2019" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
+~~~
+
+### 36. Instalando Azure Data Studio
+
+ * O Azure Data Studio é uma ferramenta para desenvolvedores leve e de gerenciamento de dados de plataforma cruzada, com conectividade com bancos de dados locais e na nuvem populares. O Azure Data Studio oferece suporte ao Windows, ao macOS e ao Linux, com capacidade imediata de conexão ao SQL do Azure e ao SQL Server. Navegue pela biblioteca de extensões para obter mais opções de suporte a bancos de dados, incluindo MySQL, PostgreSQL e Cosmos DB.
+
+ - <https://learn.microsoft.com/pt-br/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall>
+
+ ## Seção 09: Entity Framework Core
+
+ ### 37. Instalando pacotes 
+~~~
+ dotnet add package Microsoft.EntityFrameworkCore
 ~~~
