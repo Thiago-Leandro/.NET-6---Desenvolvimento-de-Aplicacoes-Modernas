@@ -155,5 +155,7 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Sql2019" -p 1433:1433 --nam
 
  ### 37. Instalando pacotes 
 ~~~
- dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Designer
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ~~~
