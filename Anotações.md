@@ -6,6 +6,12 @@
 
   - <https://www.nuget.org/>
 
+~~~
+  dotnet add package Microsoft.AspNetCore.Mvc --version 2.2.0
+  dotnet add package Microsoft.EntityFrameworkCore --Version 6.0.0
+  dotnet add package Microsoft.EntityFrameworkCore.Design --Version 6.0
+~~~
+
  Os pacotes NuGet são unidades de distribuição de software que podem conter bibliotecas compiladas, arquivos de recursos, metadados e scripts de instalação. 
 
 ## Seção 3: O conceito de uma aplicação WEB
