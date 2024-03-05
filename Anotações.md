@@ -177,3 +177,7 @@ dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.Designer
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ~~~
+
+dotnet tool install --global dotnet-ef 6.0
+
+dotnet ef migrations add CreateProduct
