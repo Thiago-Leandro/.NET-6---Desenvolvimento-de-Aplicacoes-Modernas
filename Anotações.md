@@ -191,7 +191,20 @@ dotnet ef migrations add CreateProduct
 
 ### 41. Aplicando Migrations ao banco de dados
 
+
  - Criando o banco de dados
 ~~~
 dotnet ef database update
 ~~~
+
+ - Removendo do banco de dados
+~~~
+dotnet ef migrations remove
+~~~
+
+### 42. Revertendo migration do banco de dados
+
+ - Revertendo o banco de dados
+~~~
+ dotnet ef database update 20240305133154_CreateProduct
+ ~~~
