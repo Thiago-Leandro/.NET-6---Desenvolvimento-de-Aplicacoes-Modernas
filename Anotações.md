@@ -212,6 +212,7 @@ dotnet ef migrations remove
 ## Seção 10: Salvando entidades no banco de dados 
 
 ### 47. Atualizando pacotes 
+
  - Atualizando pacotes através do dotnet-outdated-tool
 ~~~
  dotnet tool install --global dotnet-outdated-tool
