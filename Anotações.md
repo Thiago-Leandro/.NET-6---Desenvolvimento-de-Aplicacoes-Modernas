@@ -178,6 +178,20 @@ dotnet add package Microsoft.EntityFrameworkCore.Designer
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ~~~
 
-dotnet tool install --global dotnet-ef 6.0
+40. Migrations
 
+ - dotnet ef deve ser instalado como uma ferramenta global ou local. A maioria dos desenvolvedores prefere instalar dotnet ef como uma ferramenta global usando o seguinte comando:
+
+~~~
+dotnet tool install --global dotnet-ef --version 6.0.6
+~~~
+~~~
 dotnet ef migrations add CreateProduct
+~~~
+
+### 41. Aplicando Migrations ao banco de dados
+
+ - Criando o banco de dados
+~~~
+dotnet ef database update
+~~~
