@@ -1,5 +1,17 @@
 ## Anotações do curso
 
+## Seção 1: Introdução
+
+### 3. Instalando o .NET 6
+
+ - Este artigo detalha como instalar o .NET em várias distribuições do Linux manualmente, por meio de um gerenciador de pacotes ou de um contêiner.
+
+~~~
+
+sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-6.0
+~~~
+
 ### 8. NUGET
 
  - O NuGet é um sistema de gerenciamento de pacotes para o desenvolvimento de software na plataforma Microsoft. Ele permite que os desenvolvedores compartilhem, distribuam e instalem bibliotecas de código, ferramentas e outros recursos de software em seus projetos .NET.
@@ -148,7 +160,7 @@ docker pull mcr.microsoft.com/mssql/server:2022-latest
 Para executar a imagem de contêiner do Linux com o Docker, você pode usar o comando a seguir em um shell de bash ou no prompt de comando com privilégios elevados do PowerShell
 
 ~~~
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Sql2019" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
+sudo docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Sql2019" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
 ~~~
 
 ### 36. Instalando Azure Data Studio
