@@ -174,11 +174,11 @@ sudo docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Sql2019" -p 1433:1433 
  ### 37. Instalando pacotes 
 ~~~
 dotnet add package Microsoft.EntityFrameworkCore
-dotnet add package Microsoft.EntityFrameworkCore.Designer
+dotnet add package Microsoft.EntityFrameworkCore.Designer --version 6.0
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ~~~
 
-40. Migrations
+### 40. Migrations
 
  - dotnet ef deve ser instalado como uma ferramenta global ou local. A maioria dos desenvolvedores prefere instalar dotnet ef como uma ferramenta global usando o seguinte comando:
 
@@ -207,4 +207,13 @@ dotnet ef migrations remove
  - Revertendo o banco de dados
 ~~~
  dotnet ef database update 20240305133154_CreateProduct
+ ~~~
+
+## Seção 10: Salvando entidades no banco de dados 
+
+### 47. Atualizando pacotes 
+ - Atualizando pacotes através do dotnet-outdated-tool
+~~~
+ dotnet tool install --global dotnet-outdated-tool
+ dotnet outdated --upgrade
  ~~~
